@@ -1,10 +1,10 @@
 var WUNDERLIST_CLIENT_ID = ""
 var WUNDERLIST_CLIENT_SECRET = ""
-var WUNDERLIST_REDIRECT_URI = "https://script.google.com/macros/s/AKfycbzd8kuRPXMXfOqZyFnajd-vw12j9a0Hlurbbux5z9mY/dev?type=WunderListRedirect";
+var WUNDERLIST_REDIRECT_URI = "";
 var WUNDERLIST_AUTHORIZE_URL = "https://www.wunderlist.com/oauth/authorize?client_id=" + WUNDERLIST_CLIENT_ID + "&redirect_uri=" + WUNDERLIST_REDIRECT_URI;
 var WUNDERLIST_TOKEN_URL = "https://www.wunderlist.com/oauth/access_token"
 var WUNDERLIST_API_BASE_URL = "https://a.wunderlist.com/api/v1/"
-var WUNDERLIST_LIST_ID = 0
+var WUNDERLIST_LIST_ID = -1
 
 function Wunderlist(properties, type) {
   this.properties = properties;

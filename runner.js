@@ -16,6 +16,7 @@ function Runner(gmail, sc, lastReadMessage) {
     const wl = new Wunderlist({userProperties: userProperties})
     messages.forEach(function(message){
       wl.postReminder(message);
+      console.info("Message %s posted",message)
     });
   }
 
@@ -23,10 +24,13 @@ function Runner(gmail, sc, lastReadMessage) {
     const postTransactions = []    
     for(var index in messages) {
       var message = messages[index];
+      console.info("Message found with id %s", message.id)
       if(message.id === this.lastReadMessage) {
         return postTransactions;
       }
-      postTransactions.push(this.sc.getTransactionText(messages[index].text));
+      const text = this.sc.getTransactionText(message.text) || 'Unknown message with id '+message.id;
+      console.info("Text to be pushed %s",text)
+      postTransactions.push(text);
     }
     return postTransactions;
   }
